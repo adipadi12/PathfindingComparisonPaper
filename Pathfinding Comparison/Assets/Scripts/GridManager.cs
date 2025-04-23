@@ -8,6 +8,7 @@ public class GridManager : MonoBehaviour
     public float obstacleChance = 0.2f;
 
     public Node[,] grid;
+    public Dictionary<Vector2Int, GameObject> tileObjects = new Dictionary<Vector2Int, GameObject>();
 
     void Start()
     {
@@ -24,13 +25,25 @@ public class GridManager : MonoBehaviour
             {
                 Vector2 pos = new Vector2(x, y);
                 GameObject tile = Instantiate(tilePrefab, pos, Quaternion.identity);
+
                 tile.name = $"Tile_{x}_{y}";
+                tileObjects[new Vector2Int(x, y)] = tile;
 
                 bool walkable = Random.value > obstacleChance;
                 tile.GetComponent<TileComponent>().Init(x, y, walkable);
 
                 grid[x, y] = new Node(x, y, walkable);
             }
+        }
+    }
+
+    public void VisualizePath(List<Node> path, Color color)
+    {
+        foreach (Node n in path)
+        {
+            var key = new Vector2Int(n.x, n.y);
+            if (tileObjects.TryGetValue(key, out GameObject tile))
+                tile.GetComponent<SpriteRenderer>().color = color;
         }
     }
 
