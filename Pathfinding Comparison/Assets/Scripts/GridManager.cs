@@ -15,7 +15,7 @@ public class GridManager : MonoBehaviour
         GenerateGrid();
     }
 
-    void GenerateGrid()
+    public void GenerateGrid()
     {
         grid = new Node[width, height];
 

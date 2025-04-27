@@ -153,6 +153,7 @@ MonoBehaviour:
   endX: 9
   endY: 9
   pathColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  gridManager: {fileID: 2044010380}
 --- !u!4 &207893697
 Transform:
   m_ObjectHideFlags: 0
@@ -389,6 +390,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &677729164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 677729166}
+  - component: {fileID: 677729165}
+  m_Layer: 0
+  m_Name: DataCollector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &677729165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677729164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be5ab3c92633224db9d0c28264940c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  widths: 0a0000001400000032000000
+  heights: 0a0000001400000032000000
+  densities:
+  - 0.1
+  - 0.2
+  - 0.3
+  runsPerConfig: 5
+  gridManager: {fileID: 2044010380}
+  bfs: {fileID: 207893696}
+  dijkstra: {fileID: 1679532970}
+  aStar: {fileID: 1611592283}
+  runsPerAlgorithm: 10
+  outputFileName: results.csv
+--- !u!4 &677729166
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677729164}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.772825, y: 3.1272802, z: -9.9844885}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1611592280
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,6 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff421c91afa59174d8f2d51e6d6c080b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gridManager: {fileID: 2044010380}
 --- !u!1 &1679532969
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +526,7 @@ MonoBehaviour:
   endX: 9
   endY: 9
   pathColor: {r: 1, g: 0, b: 0, a: 1}
+  gridManager: {fileID: 2044010380}
 --- !u!4 &1679532971
 Transform:
   m_ObjectHideFlags: 0
@@ -540,3 +600,4 @@ SceneRoots:
   - {fileID: 1611592282}
   - {fileID: 207893697}
   - {fileID: 1679532971}
+  - {fileID: 677729166}

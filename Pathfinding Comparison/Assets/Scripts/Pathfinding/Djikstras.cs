@@ -6,18 +6,18 @@ public class Djikstras : MonoBehaviour
     public int startX, startY, endX, endY;
     public Color pathColor = Color.red;
 
-    private GridManager gridManager;
+    public GridManager gridManager;
 
-    void Update()
-    {
-        gridManager = FindAnyObjectByType<GridManager>();
-        Node start = gridManager.grid[startX, startY];
-        Node end = gridManager.grid[endX, endY];
-        List<Node> path = FindPath(start, end);
-        gridManager.VisualizePath(path, pathColor);
-    }
+    //void Update()
+    //{
+    //    gridManager = FindAnyObjectByType<GridManager>();
+    //    Node start = gridManager.grid[startX, startY];
+    //    Node end = gridManager.grid[endX, endY];
+    //    List<Node> path = FindPath(start, end);
+    //    gridManager.VisualizePath(path, pathColor);
+    //}
 
-    List<Node> FindPath(Node start, Node end)
+    public List<Node> FindPath(Node start, Node end)
     {
         var openSet = new List<Node> { start };
         var cameFrom = new Dictionary<Node, Node>();

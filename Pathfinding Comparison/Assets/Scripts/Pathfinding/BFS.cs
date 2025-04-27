@@ -6,18 +6,18 @@ public class BFSPathfinder : MonoBehaviour
     public int startX, startY, endX, endY;      // set in Inspector
     public Color pathColor = Color.yellow;       // path will be this color
 
-    private GridManager gridManager;
+    public GridManager gridManager;
 
-    void Update()
-    {
-        gridManager = FindAnyObjectByType<GridManager>();
-        Node start = gridManager.grid[startX, startY];
-        Node end = gridManager.grid[endX, endY];
-        List<Node> path = FindPath(start, end);
-        gridManager.VisualizePath(path, pathColor);
-    }
+    //void Update()
+    //{
+    //    gridManager = FindAnyObjectByType<GridManager>();
+    //    Node start = gridManager.grid[startX, startY];
+    //    Node end = gridManager.grid[endX, endY];
+    //    List<Node> path = FindPath(start, end);
+    //    gridManager.VisualizePath(path, pathColor);
+    //}
 
-    List<Node> FindPath(Node start, Node end)
+    public List<Node> FindPath(Node start, Node end)
     {
         var queue = new Queue<Node>();
         var visited = new HashSet<Node>();
