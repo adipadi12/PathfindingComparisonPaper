@@ -5,23 +5,23 @@ public class AStar : MonoBehaviour
 {
     public GridManager gridManager;
 
-    //void Update()
-    //{
-    //    gridManager = FindAnyObjectByType<GridManager>();
+    void Update()
+    {
+        gridManager = FindAnyObjectByType<GridManager>();
 
-    //    Node start = gridManager.grid[0, 0];
-    //    Node end = gridManager.grid[gridManager.width - 1, gridManager.height - 1];
+        Node start = gridManager.grid[0, 0];
+        Node end = gridManager.grid[gridManager.width - 1, gridManager.height - 1];
 
-    //    List<Node> path = FindPath(start, end);
+        List<Node> path = FindPath(start, end);
 
-    //    // Visualize path
-    //    foreach (Node node in path)
-    //    {
-    //        Vector3 pos = new Vector3(node.x, node.y, 0);
-    //        GameObject tile = GameObject.Find($"Tile_{node.x}_{node.y}");
-    //        tile.GetComponent<SpriteRenderer>().color = Color.green;
-    //    }
-    //}
+        // Visualize path
+        foreach (Node node in path)
+        {
+            Vector3 pos = new Vector3(node.x, node.y, 0);
+            GameObject tile = GameObject.Find($"Tile_{node.x}_{node.y}");
+            tile.GetComponent<SpriteRenderer>().color = Color.green;
+        }
+    }
 
     public List<Node> FindPath(Node start, Node target)
     {
